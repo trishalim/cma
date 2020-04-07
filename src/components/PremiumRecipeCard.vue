@@ -4,6 +4,16 @@
     </div>
     <div class="recipe-desc">
       <h3 class="recipe-title"> {{ recipe.title }} </h3>
+      <div class="recipe-rating">
+        <div class="stars">
+          <img v-bind:src="getImageUrl('star.svg')" />
+          <img v-bind:src="getImageUrl('star.svg')" />
+          <img v-bind:src="getImageUrl('star.svg')" />
+          <img v-bind:src="getImageUrl('star-half.svg')" />
+          <img v-bind:src="getImageUrl('star-empty.svg')" />
+        </div>
+        <div class="rating-count">{{ recipe.ratingCount }} ratings</div>
+      </div>
     </div>
   </div>
 </template>
@@ -44,6 +54,7 @@ export default {
     background: white;
     box-shadow: 0px 13px 35px rgba(0, 30, 47, 0.1);
     border-radius: 12px;
+    text-align: left;
   }
   .recipe-image {
     height: 200px;
@@ -57,7 +68,19 @@ export default {
     font-size: 18px;
     line-height: 20px;
     margin: 0;
-    text-align: left;
+    margin-bottom: 16px;
+  }
+
+  .recipe-rating {
+    display: flex;
+    align-items: center;
+  }
+  .stars {
+    margin-right: 8px;
+  }
+  .rating-count {
+    color: #1CA677;
+    font-size: 14px;
   }
 
 </style>
