@@ -8,7 +8,19 @@
       <p>See the README file for assignment requirements.</p>
 
       <div class="premium-recipe-wrapper">
-        <PremiumRecipeCard />
+        <PremiumRecipeCard class="recipe" v-for="(recipe, index) in recipes" :key="index"
+          v-bind:title="recipe.title"
+          v-bind:rating="recipe.rating"
+          v-bind:ratingCount="recipe.ratingCount"
+          v-bind:duration="recipe.duration"
+          v-bind:energy="recipe.energy"
+          v-bind:energyUnit="recipe.energyUnit"
+          v-bind:carbs="recipe.carbs"
+          v-bind:protein="recipe.protein"
+          v-bind:fats="recipe.fats"
+          v-bind:isLiked="recipe.isLiked"
+          v-bind:imageFileName="recipe.imageFileName"
+        />
       </div>
     </div>
   </div>
@@ -21,7 +33,39 @@ export default {
   name: "App",
   components: {
     PremiumRecipeCard
-  }
+  },
+  data() {
+    return {
+      recipes: [
+        {
+          title: 'Low Carb Thai Chicken Curry With Coconut Cauliflower Rice',
+          rating: 3.5,
+          ratingCount: 200,
+          duration: 135,
+          energy: 489,
+          energyUnit: 'Kilojoules',
+          carbs: 20,
+          protein: 16,
+          fats: 6,
+          isLiked: true,
+          imageFileName: 'thai-curry.png'
+        },
+        {
+          title: 'Keto Bacon Wrapped Chicken Thighs With Cheddar Sauce and Chocolate Sprinkles and Ketchup and Mozzarella Cheese',
+          rating: 3.5,
+          ratingCount: 200,
+          duration: 120,
+          energy: 200,
+          energyUnit: 'Calories',
+          carbs: 30,
+          protein: 16,
+          fats: 26,
+          isLiked: false,
+          imageFileName: 'bacon-wrapped-chicken.jpeg'
+        }
+      ]
+    }
+  },
 };
 </script>
 
@@ -59,5 +103,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 100px;
   border: 2px dashed red;
   padding: 16px;
+  display: flex;
+  justify-content: center;
+}
+.recipe {
+  margin: 10px;
 }
 </style>

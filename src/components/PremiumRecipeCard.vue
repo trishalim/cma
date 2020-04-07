@@ -1,10 +1,10 @@
 <template>
   <div class="recipe-card">
 
-    <div class="recipe-image" :style="{'background-image': `url(${getImageUrl(recipe.imageFileName)})`}">
+    <div class="recipe-image" :style="{'background-image': `url(${getImageUrl(imageFileName)})`}">
       <div class="recipe-image-overlay"></div>
-      <img class="heart" v-if="!recipe.isLiked" v-bind:src="getImageUrl('heart-outline.svg')" />
-      <img class="heart" v-if="recipe.isLiked" v-bind:src="getImageUrl('heart-filled.svg')" />
+      <img class="heart" v-if="!isLiked" v-bind:src="getImageUrl('heart-outline.svg')" />
+      <img class="heart" v-if="isLiked" v-bind:src="getImageUrl('heart-filled.svg')" />
       <div class="premium-recipe">
         <img v-bind:src="getImageUrl('trophy.svg')" />
         Premium Recipe
@@ -13,11 +13,11 @@
 
     <div class="recipe-desc">
 
-      <h3 class="recipe-title"> {{ recipe.title }} </h3>
+      <h3 class="recipe-title"> {{ title }} </h3>
 
       <div class="recipe-rating">
-        <Rating v-bind:rating="recipe.rating" />
-        <div class="rating-count">{{ recipe.ratingCount }} ratings</div>
+        <Rating v-bind:rating="rating" />
+        <div class="rating-count">{{ ratingCount }} ratings</div>
       </div>
 
       <div class="recipe-detail">
@@ -34,13 +34,13 @@
 
         <div class="right">
           <div class="macro">
-            <img v-bind:src="getImageUrl('dot-red.svg')" />{{ recipe.carbs }}g
+            <img v-bind:src="getImageUrl('dot-red.svg')" />{{ carbs }}g
           </div>
           <div class="macro">
-            <img v-bind:src="getImageUrl('dot-blue.svg')" />{{ recipe.protein }}g
+            <img v-bind:src="getImageUrl('dot-blue.svg')" />{{ protein }}g
           </div>
           <div class="macro">
-            <img v-bind:src="getImageUrl('dot-yellow.svg')" />{{ recipe.fats }}g
+            <img v-bind:src="getImageUrl('dot-yellow.svg')" />{{ fats }}g
           </div>
         </div>
       </div>
@@ -58,37 +58,33 @@ export default {
   components: {
     Rating
   },
+  props: {
+    title: String,
+    rating: Number,
+    ratingCount: Number,
+    duration: Number,
+    energy: Number,
+    energyUnit: String,
+    carbs: Number,
+    protein: Number,
+    fats: Number,
+    isLiked: Boolean,
+    imageFileName: String
+  },
   computed: {
     energyDisplay: function() {
-      let energyValue = this.recipe.energy;
+      let energyValue = this.energy;
 
-      if (this.recipe.energyUnit.toLowerCase() === 'kilojoules') {
+      if (this.energyUnit.toLowerCase() === 'kilojoules') {
         energyValue = Math.floor(energyValue * 4.184);
       }
 
-      return `${energyValue} ${this.recipe.energyUnit}`;
+      return `${energyValue} ${this.energyUnit}`;
     },
     durationDisplay: function() {
-      const hours = Math.floor(this.recipe.duration / 60);
-      const minutes = this.recipe.duration - (hours * 60);
+      const hours = Math.floor(this.duration / 60);
+      const minutes = this.duration - (hours * 60);
       return `${hours} hr ${minutes} min`;
-    }
-  },
-  data() {
-    return {
-      recipe: {
-        title: 'Low Carb Thai Chicken Curry With Coconut Cauliflower Rice',
-        rating: 3.5,
-        ratingCount: 200,
-        duration: 135,
-        energy: 489,
-        energyUnit: 'Kilojoules',
-        carbs: 20,
-        protein: 16,
-        fats: 6,
-        isLiked: true,
-        imageFileName: 'thai-curry.png'
-      }
     }
   },
   methods: {
@@ -114,6 +110,7 @@ export default {
     border-radius: 12px 12px 0 0;
     background-position: center;
     position: relative;
+    background-size: cover;
   }
   .recipe-image-overlay{
     position: absolute;
