@@ -1,9 +1,13 @@
 <template>
   <div class="recipe-card">
+
     <div class="recipe-image" :style="{'background-image': `url(${getImageUrl(recipe.imageFileName)})`}">
     </div>
+
     <div class="recipe-desc">
+
       <h3 class="recipe-title"> {{ recipe.title }} </h3>
+
       <div class="recipe-rating">
         <div class="stars">
           <img v-bind:src="getImageUrl('star.svg')" />
@@ -14,8 +18,39 @@
         </div>
         <div class="rating-count">{{ recipe.ratingCount }} ratings</div>
       </div>
+
+      <div class="recipe-detail">
+        <div class="left">
+          <div class="duration">
+            <img v-bind:src="getImageUrl('clock.svg')" />
+            {{ recipe.duration }} min
+          </div>
+          <div class="energy">
+            <img v-bind:src="getImageUrl('flame.svg')" />
+            {{ recipe.energy }} {{ recipe.energyUnit }}
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="macro">
+            <img v-bind:src="getImageUrl('dot-red.svg')" />
+            {{ recipe.carbs }}g
+          </div>
+          <div class="macro">
+            <img v-bind:src="getImageUrl('dot-blue.svg')" />
+            {{ recipe.protein }}g
+          </div>
+          <div class="macro">
+            <img v-bind:src="getImageUrl('dot-yellow.svg')" />
+            {{ recipe.fats }}g
+          </div>
+        </div>
+      </div>
+
     </div>
+
   </div>
+
 </template>
 
 <script>
@@ -68,7 +103,7 @@ export default {
     font-size: 18px;
     line-height: 20px;
     margin: 0;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 
   .recipe-rating {
@@ -81,6 +116,29 @@ export default {
   .rating-count {
     color: #1CA677;
     font-size: 14px;
+  }
+
+  .recipe-detail {
+    font-size: 12px;
+    color: #393C40;
+    margin-top: 4px;
+    justify-content: space-between;
+  }
+  .recipe-detail, .duration, .energy, .left, .right {
+    display: flex;
+    align-items: center;
+  }
+  .duration img, .energy img {
+    margin-right: 8px;
+  }
+  .energy {
+    margin-left: 16px;
+  }
+  .macro {
+    margin-left: 8px;
+  }
+  .macro img {
+    margin-right: 4px;
   }
 
 </style>
