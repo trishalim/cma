@@ -84,7 +84,11 @@ export default {
     durationDisplay: function() {
       const hours = Math.floor(this.duration / 60);
       const minutes = this.duration - (hours * 60);
-      return `${hours} hr ${minutes} min`;
+
+      let durationDisplay = '';
+      if (hours) durationDisplay += `${hours} hr `;
+      if (minutes) durationDisplay += `${minutes} min `;
+      return durationDisplay;
     }
   },
   methods: {
