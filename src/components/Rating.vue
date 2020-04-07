@@ -20,8 +20,9 @@ export default {
       ];
 
       // add a star for each full rating
-      for (let index = 1; index < this.rating; index++) {
-        stars[index - 1] = "star";
+      const fullStarsCount = Math.floor(this.rating);
+      for (let index = 0; index < fullStarsCount; index++) {
+        stars[index] = "star";
       }
 
       // if rating has a decimal point, add half a star

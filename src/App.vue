@@ -52,7 +52,7 @@ export default {
         },
         {
           title: 'Keto Bacon Wrapped Chicken Thighs With Cheddar Sauce and Chocolate Sprinkles and Ketchup and Mozzarella Cheese',
-          rating: 3.5,
+          rating: 3,
           ratingCount: 200,
           duration: 120,
           energy: 200,
