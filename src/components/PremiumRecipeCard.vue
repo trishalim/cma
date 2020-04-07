@@ -39,16 +39,13 @@
 
         <div class="right">
           <div class="macro">
-            <img v-bind:src="getImageUrl('dot-red.svg')" />
-            {{ recipe.carbs }}g
+            <img v-bind:src="getImageUrl('dot-red.svg')" />{{ recipe.carbs }}g
           </div>
           <div class="macro">
-            <img v-bind:src="getImageUrl('dot-blue.svg')" />
-            {{ recipe.protein }}g
+            <img v-bind:src="getImageUrl('dot-blue.svg')" />{{ recipe.protein }}g
           </div>
           <div class="macro">
-            <img v-bind:src="getImageUrl('dot-yellow.svg')" />
-            {{ recipe.fats }}g
+            <img v-bind:src="getImageUrl('dot-yellow.svg')" />{{ recipe.fats }}g
           </div>
         </div>
       </div>
