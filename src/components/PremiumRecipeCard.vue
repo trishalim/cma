@@ -15,13 +15,7 @@
       <h3 class="recipe-title"> {{ recipe.title }} </h3>
 
       <div class="recipe-rating">
-        <div class="stars">
-          <img v-bind:src="getImageUrl('star.svg')" />
-          <img v-bind:src="getImageUrl('star.svg')" />
-          <img v-bind:src="getImageUrl('star.svg')" />
-          <img v-bind:src="getImageUrl('star-half.svg')" />
-          <img v-bind:src="getImageUrl('star-empty.svg')" />
-        </div>
+        <Rating v-bind:rating="recipe.rating" />
         <div class="rating-count">{{ recipe.ratingCount }} ratings</div>
       </div>
 
@@ -57,13 +51,17 @@
 </template>
 
 <script>
+import Rating from "./Rating.vue";
 export default {
   name: "PremiumRecipeCard",
+  components: {
+    Rating
+  },
   data() {
     return {
       recipe: {
         title: 'Low Carb Thai Chicken Curry With Coconut Cauliflower Rice',
-        rating: 3,
+        rating: 3.5,
         ratingCount: 200,
         duration: 24,
         energy: 489,
@@ -81,7 +79,7 @@ export default {
       return require("../assets/" + imageFileName);
     }
   }
-}
+};
 </script>
 
 <style scoped>
