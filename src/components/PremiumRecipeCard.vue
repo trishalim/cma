@@ -3,7 +3,8 @@
 
     <div class="recipe-image" :style="{'background-image': `url(${getImageUrl(recipe.imageFileName)})`}">
       <div class="recipe-image-overlay"></div>
-      <img class="heart" v-bind:src="getImageUrl('heart-outline.svg')" />
+      <img class="heart" v-if="!recipe.isLiked" v-bind:src="getImageUrl('heart-outline.svg')" />
+      <img class="heart" v-if="recipe.isLiked" v-bind:src="getImageUrl('heart-filled.svg')" />
       <div class="premium-recipe">
         <img v-bind:src="getImageUrl('trophy.svg')" />
         Premium Recipe
