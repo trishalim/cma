@@ -118,6 +118,12 @@ export default {
     line-height: 20px;
     margin: 0;
     margin-bottom: 12px;
+
+    /* truncate to 2 lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .heart {
