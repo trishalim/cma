@@ -27,7 +27,7 @@
           </div>
           <div class="energy">
             <img v-bind:src="getImageUrl('flame.svg')" />
-            {{ recipe.energy }} {{ recipe.energyUnit }}
+            {{ energyDisplay }}
           </div>
         </div>
 
@@ -57,6 +57,17 @@ export default {
   components: {
     Rating
   },
+  computed: {
+    energyDisplay: function() {
+      let energyValue = this.recipe.energy;
+
+      if (this.recipe.energyUnit.toLowerCase() === 'kilojoules') {
+        energyValue = Math.floor(energyValue * 4.184);
+      }
+
+      return `${energyValue} ${this.recipe.energyUnit}`;
+    }
+  },
   data() {
     return {
       recipe: {
@@ -65,7 +76,7 @@ export default {
         ratingCount: 200,
         duration: 24,
         energy: 489,
-        energyUnit: 'Calories',
+        energyUnit: 'Kilojoules',
         carbs: 20,
         protein: 16,
         fats: 6,
