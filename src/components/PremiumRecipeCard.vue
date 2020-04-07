@@ -1,5 +1,5 @@
 <template>
-  <div class="recipe-card">
+  <div class="recipe-card" @click="$emit('click')">
 
     <div class="recipe-image" :style="{'background-image': `url(${getImageUrl(imageFileName)})`}">
       <div class="recipe-image-overlay"></div>
