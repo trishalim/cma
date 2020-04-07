@@ -120,7 +120,7 @@ export default {
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 12px;
+    border-radius: 12px 12px 0 0;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(22, 27, 35, 0.2) 70.94%, rgba(26, 29, 34, 0.79) 106.25%);
   }
   .recipe-image:hover .recipe-image-overlay {
