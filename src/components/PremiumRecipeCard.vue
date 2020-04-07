@@ -106,6 +106,10 @@ export default {
     height: 100%;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(22, 27, 35, 0.2) 70.94%, rgba(26, 29, 34, 0.79) 106.25%);
   }
+  .recipe-image:hover .recipe-image-overlay {
+    background: #b6b6b64a;
+    transition: 0.1s;
+  }
   .recipe-desc {
     padding: 8px 16px;
   }
