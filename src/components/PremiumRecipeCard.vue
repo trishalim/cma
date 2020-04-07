@@ -2,6 +2,12 @@
   <div class="recipe-card">
 
     <div class="recipe-image" :style="{'background-image': `url(${getImageUrl(recipe.imageFileName)})`}">
+      <div class="recipe-image-overlay"></div>
+      <img class="heart" v-bind:src="getImageUrl('heart-outline.svg')" />
+      <div class="premium-recipe">
+        <img v-bind:src="getImageUrl('trophy.svg')" />
+        Premium Recipe
+      </div>
     </div>
 
     <div class="recipe-desc">
@@ -95,6 +101,13 @@ export default {
     height: 200px;
     border-radius: 12px 12px 0 0;
     background-position: center;
+    position: relative;
+  }
+  .recipe-image-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(22, 27, 35, 0.2) 70.94%, rgba(26, 29, 34, 0.79) 106.25%);
   }
   .recipe-desc {
     padding: 8px 16px;
@@ -104,6 +117,30 @@ export default {
     line-height: 20px;
     margin: 0;
     margin-bottom: 12px;
+  }
+
+  .heart {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    cursor: pointer;
+  }
+  .premium-recipe {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    padding: 4px 8px;
+    display: flex;
+    background: #ffffff47;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    z-index: 1;
+    letter-spacing: -0.2px;
+  }
+  .premium-recipe img {
+    margin-right: 4px;
   }
 
   .recipe-rating {
