@@ -23,7 +23,7 @@
         <div class="left">
           <div class="duration">
             <img v-bind:src="getImageUrl('clock.svg')" />
-            {{ recipe.duration }} min
+            {{ durationDisplay }}
           </div>
           <div class="energy">
             <img v-bind:src="getImageUrl('flame.svg')" />
@@ -66,6 +66,11 @@ export default {
       }
 
       return `${energyValue} ${this.recipe.energyUnit}`;
+    },
+    durationDisplay: function() {
+      const hours = Math.floor(this.recipe.duration / 60);
+      const minutes = this.recipe.duration - (hours * 60);
+      return `${hours} hr ${minutes} min`;
     }
   },
   data() {
@@ -74,7 +79,7 @@ export default {
         title: 'Low Carb Thai Chicken Curry With Coconut Cauliflower Rice',
         rating: 3.5,
         ratingCount: 200,
-        duration: 24,
+        duration: 135,
         energy: 489,
         energyUnit: 'Kilojoules',
         carbs: 20,
