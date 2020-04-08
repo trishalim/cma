@@ -49,17 +49,17 @@ export const Default = () => ({
   template:
   `
     <PremiumRecipeCard @click="action"
-      v-bind:title="title"
-      v-bind:rating="rating"
-      v-bind:ratingCount="ratingCount"
-      v-bind:duration="duration"
-      v-bind:energy="energy"
-      v-bind:energyUnit="energyUnit"
-      v-bind:carbs="carbs"
-      v-bind:protein="protein"
-      v-bind:fats="fats"
-      v-bind:isLiked="isLiked"
-      v-bind:imageFileName="imageFileName"
+      :title="title"
+      :rating="rating"
+      :ratingCount="ratingCount"
+      :duration="duration"
+      :energy="energy"
+      :energyUnit="energyUnit"
+      :carbs="carbs"
+      :protein="protein"
+      :fats="fats"
+      :isLiked="isLiked"
+      :imageFileName="imageFileName"
     />
   `,
   methods: { action: action("clicked") }

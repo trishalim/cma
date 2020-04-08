@@ -1,11 +1,11 @@
 <template>
   <div class="recipe-detail">
     <div class="duration">
-      <img v-bind:src="getImageUrl('clock.svg')" />
+      <img :src="getImageUrl('clock.svg')" />
       {{ durationDisplay }}
     </div>
     <div class="energy">
-      <img v-bind:src="getImageUrl('flame.svg')" />
+      <img :src="getImageUrl('flame.svg')" />
       {{ energyDisplay }}
     </div>
   </div>

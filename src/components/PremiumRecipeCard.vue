@@ -8,17 +8,17 @@
       <img
         class="heart heart-not-liked"
         v-if="!isLiked"
-        v-bind:src="getImageUrl('heart-outline.svg')"
+        :src="getImageUrl('heart-outline.svg')"
       />
 
       <img
         class="heart heart-liked"
         v-if="isLiked"
-        v-bind:src="getImageUrl('heart-filled.svg')"
+        :src="getImageUrl('heart-filled.svg')"
       />
 
       <div class="premium-recipe">
-        <img v-bind:src="getImageUrl('trophy.svg')" />
+        <img :src="getImageUrl('trophy.svg')" />
         Premium Recipe
       </div>
     </div>
@@ -27,7 +27,7 @@
       <h3 class="recipe-title">{{ title }}</h3>
 
       <div class="recipe-rating">
-        <Rating v-bind:rating="rating" />
+        <Rating :rating="rating" />
         <div class="rating-count">{{ ratingCount }} ratings</div>
       </div>
 

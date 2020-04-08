@@ -1,13 +1,13 @@
 <template>
   <div class="macros">
     <div class="macro">
-      <img v-bind:src="getImageUrl('dot-red.svg')" />{{ carbs }}g
+      <img :src="getImageUrl('dot-red.svg')" />{{ carbs }}g
     </div>
     <div class="macro">
-      <img v-bind:src="getImageUrl('dot-blue.svg')" />{{ protein }}g
+      <img :src="getImageUrl('dot-blue.svg')" />{{ protein }}g
     </div>
     <div class="macro">
-      <img v-bind:src="getImageUrl('dot-yellow.svg')" />{{ fats }}g
+      <img :src="getImageUrl('dot-yellow.svg')" />{{ fats }}g
     </div>
   </div>
 </template>

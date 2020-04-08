@@ -11,17 +11,17 @@
         <PremiumRecipeCard
           class="recipe"
           v-for="(recipe, index) in recipes" :key="index"
-          v-bind:title="recipe.title"
-          v-bind:rating="recipe.rating"
-          v-bind:ratingCount="recipe.ratingCount"
-          v-bind:duration="recipe.duration"
-          v-bind:energy="recipe.energy"
-          v-bind:energyUnit="recipe.energyUnit"
-          v-bind:carbs="recipe.carbs"
-          v-bind:protein="recipe.protein"
-          v-bind:fats="recipe.fats"
-          v-bind:isLiked="recipe.isLiked"
-          v-bind:imageFileName="recipe.imageFileName"
+          :title="recipe.title"
+          :rating="recipe.rating"
+          :ratingCount="recipe.ratingCount"
+          :duration="recipe.duration"
+          :energy="recipe.energy"
+          :energyUnit="recipe.energyUnit"
+          :carbs="recipe.carbs"
+          :protein="recipe.protein"
+          :fats="recipe.fats"
+          :isLiked="recipe.isLiked"
+          :imageFileName="recipe.imageFileName"
         />
       </div>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="stars">
     <span v-for="(star, index) in starFileNames" :key="index">
-      <img v-bind:src="getImageUrl(`${star}.svg`)" />
+      <img :src="getImageUrl(`${star}.svg`)" />
     </span>
   </div>
 </template>
