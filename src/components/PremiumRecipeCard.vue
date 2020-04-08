@@ -6,13 +6,13 @@
     >
       <div class="recipe-image-overlay"></div>
       <img
-        class="heart"
+        class="heart heart-not-liked"
         v-if="!isLiked"
         v-bind:src="getImageUrl('heart-outline.svg')"
       />
 
       <img
-        class="heart"
+        class="heart heart-liked"
         v-if="isLiked"
         v-bind:src="getImageUrl('heart-filled.svg')"
       />
