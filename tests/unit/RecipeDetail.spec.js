@@ -16,12 +16,12 @@ describe("RecipeDetail.vue", () => {
   });
 
   it('Minutes are not displayed if 0', () => {
-    wrapper.setProps({ duration: 60});
+    wrapper.setProps({ duration: 60 });
     expect(wrapper.vm.durationDisplay.trim()).toBe("1 hr");
   });
 
   it('Hours are not displayed if 0', () => {
-    wrapper.setProps({ duration: 15});
+    wrapper.setProps({ duration: 15 });
     expect(wrapper.vm.durationDisplay.trim()).toBe("15 min");
   });
 

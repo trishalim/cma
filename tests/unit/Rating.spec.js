@@ -15,7 +15,7 @@ describe("Rating.vue", () => {
   });
 
   it('Displays star rating correctly if rating is a decimal (has a half star)', () => {
-    wrapper.setProps({ rating: 2.5});
+    wrapper.setProps({ rating: 2.5 });
     expect(wrapper.vm.starFileNames).toEqual([
       "star", "star", "star-half", "star-empty", "star-empty"
     ]);
