@@ -1,7 +1,8 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount, createLocalVue } from '@vue/test-utils';
 import RecipeDetail from '@/components/RecipeDetail.vue';
 
 describe("RecipeDetail.vue", () => {
+  const vue = createLocalVue();
   const wrapper = shallowMount(RecipeDetail, {
     propsData: {
       duration: 215,
@@ -23,4 +24,14 @@ describe("RecipeDetail.vue", () => {
     wrapper.setProps({ duration: 15});
     expect(wrapper.vm.durationDisplay.trim()).toBe("15 min");
   });
+
+  it('Kilojoules are converted to Calories', () => {
+    expect(wrapper.find('.energy').text()).toContain('836 Kilojoules');
+  });
+
+  it('Calories are not converted', async () => {
+    wrapper.setProps({ energyUnit: 'Calories' });
+    await vue.nextTick();
+    expect(wrapper.find('.energy').text()).toContain('200 Calories');
+  })
 })
