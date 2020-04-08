@@ -45,9 +45,9 @@
 </template>
 
 <script>
-import Rating from "./Rating.vue";
-import RecipeDetail from "./RecipeDetail.vue";
-import Macros from "./Macros.vue";
+import Rating from "@/components/Rating.vue";
+import RecipeDetail from "@/components/RecipeDetail.vue";
+import Macros from "@/components/Macros.vue";
 
 export default {
   name: "PremiumRecipeCard",
@@ -92,7 +92,7 @@ export default {
   },
   methods: {
     getImageUrl(imageFileName) {
-      return require("../assets/" + imageFileName);
+      return require("@/assets/" + imageFileName);
     }
   }
 };

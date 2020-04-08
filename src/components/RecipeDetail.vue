@@ -1,11 +1,11 @@
 <template>
   <div class="recipe-detail">
     <div class="duration">
-      <img :src="getImageUrl('clock.svg')" />
+      <img src="@/assets/clock.svg" />
       {{ durationDisplay }}
     </div>
     <div class="energy">
-      <img :src="getImageUrl('flame.svg')" />
+      <img src="@/assets/flame.svg" />
       {{ energyDisplay }}
     </div>
   </div>
@@ -37,11 +37,6 @@ export default {
       if (hours) durationDisplay += `${hours} hr `;
       if (minutes) durationDisplay += `${minutes} min `;
       return durationDisplay;
-    }
-  },
-  methods: {
-    getImageUrl(imageFileName) {
-      return require("../assets/" + imageFileName);
     }
   }
 };
