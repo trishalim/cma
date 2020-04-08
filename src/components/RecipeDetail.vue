@@ -1,11 +1,11 @@
 <template>
   <div class="recipe-detail">
     <div class="duration">
-      <img src="@/assets/clock.svg" />
+      <img src="../assets/clock.svg" />
       {{ durationDisplay }}
     </div>
     <div class="energy">
-      <img src="@/assets/flame.svg" />
+      <img src="../assets/flame.svg" />
       {{ energyDisplay }}
     </div>
   </div>
@@ -15,7 +15,7 @@
 import {
   getEnergyDisplayInCalories,
   getDurationDisplayInHrMin
-} from "@/utils/units.util";
+} from "../utils/units.util";
 
 export default {
   name: "RecipeDetail",

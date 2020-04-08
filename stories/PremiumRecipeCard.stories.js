@@ -25,7 +25,7 @@ export const Default = () => ({
       default: number('Duration (minutes)', 200)
     },
     energy: {
-      default: number('Energy', 4.5)
+      default: number('Energy', 200)
     },
     energyUnit: {
       default: text('Energy Unit', 'Calories')

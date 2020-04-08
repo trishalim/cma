@@ -1,13 +1,13 @@
 <template>
   <div class="macros">
     <div class="macro" v-if="carbs >= 0">
-      <img src="@/assets/dot-red.svg" />{{ carbs }}g
+      <img src="../assets/dot-red.svg" />{{ carbs }}g
     </div>
     <div class="macro" v-if="protein >= 0">
-      <img src="@/assets/dot-blue.svg" />{{ protein }}g
+      <img src="../assets/dot-blue.svg" />{{ protein }}g
     </div>
     <div class="macro" v-if="fats >= 0">
-      <img src="@/assets/dot-yellow.svg" />{{ fats }}g
+      <img src="../assets/dot-yellow.svg" />{{ fats }}g
     </div>
   </div>
 </template>
