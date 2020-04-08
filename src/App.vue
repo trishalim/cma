@@ -10,7 +10,8 @@
       <div class="premium-recipe-wrapper">
         <PremiumRecipeCard
           class="recipe"
-          v-for="(recipe, index) in recipes" :key="index"
+          v-for="(recipe, index) in recipes"
+          :key="index"
           :title="recipe.title"
           :rating="recipe.rating"
           :ratingCount="recipe.ratingCount"
@@ -61,7 +62,7 @@ export default {
           energyUnit: "Calories",
           carbs: 30,
           protein: 16,
-          fats: 26,
+          fats: 0,
           isLiked: false,
           imageFileName: "bacon-wrapped-chicken.jpeg"
         }

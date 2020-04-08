@@ -10,7 +10,10 @@
 export default {
   name: "Rating",
   props: {
-    rating: Number
+    rating: {
+      type: Number,
+      default: 0
+    }
   },
   computed: {
     // an array of star names based on rating

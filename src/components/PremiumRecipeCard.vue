@@ -57,17 +57,38 @@ export default {
     Macros
   },
   props: {
-    title: String,
-    rating: Number,
-    ratingCount: Number,
-    duration: Number,
-    energy: Number,
-    energyUnit: String,
+    title: {
+      type: String,
+      default: ""
+    },
+    rating: {
+      type: Number,
+      default: 0
+    },
+    ratingCount: {
+      type: Number,
+      default: 0
+    },
+    duration: {
+      type: Number,
+      default: 0
+    },
+    energy: {
+      type: Number,
+      default: 0
+    },
+    energyUnit: {
+      type: String,
+      default: "Calories"
+    },
     carbs: Number,
     protein: Number,
     fats: Number,
     isLiked: Boolean,
-    imageFileName: String
+    imageFileName: {
+      type: String,
+      default: ""
+    }
   },
   methods: {
     getImageUrl(imageFileName) {
