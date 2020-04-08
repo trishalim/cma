@@ -13,37 +13,37 @@ export const Default = () => ({
   components: { PremiumRecipeCard },
   props: {
     title: {
-      default: text('Title', 'Low Carb Thai Chicken Curry With Coconut Cauliflower Rice')
+      default: text("Title", "Low Carb Thai Chicken Curry With Coconut Cauliflower Rice")
     },
     rating: {
-      default: number('Rating', 4.5)
+      default: number("Rating", 4.5)
     },
     ratingCount: {
-      default: number('Number of Ratings', 200)
+      default: number("Number of Ratings", 200)
     },
     duration: {
-      default: number('Duration (minutes)', 200)
+      default: number("Duration (minutes)", 200)
     },
     energy: {
-      default: number('Energy', 200)
+      default: number("Energy", 200)
     },
     energyUnit: {
-      default: text('Energy Unit', 'Calories')
+      default: text("Energy Unit", "Calories")
     },
     carbs: {
-      default: number('Carbohydrates Amount (g)', 34)
+      default: number("Carbohydrates Amount (g)", 34)
     },
     protein: {
-      default: number('Protein Amount (g)', 10)
+      default: number("Protein Amount (g)", 10)
     },
     fats: {
-      default: number('Fats Amount (g)', 5)
+      default: number("Fats Amount (g)", 5)
     },
     isLiked: {
-      default: boolean('Liked', false)
+      default: boolean("Liked", false)
     },
     imageFileName: {
-      default: text('Image File Name', 'thai-curry.png')
+      default: text("Image File Name", "thai-curry.png")
     },
   },
   template:

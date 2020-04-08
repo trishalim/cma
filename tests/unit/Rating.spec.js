@@ -1,5 +1,5 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils';
-import Rating from '@/components/Rating.vue';
+import { shallowMount, createLocalVue } from "@vue/test-utils";
+import Rating from "@/components/Rating.vue";
 
 describe("Rating.vue", () => {
   const vue = createLocalVue();
@@ -9,7 +9,7 @@ describe("Rating.vue", () => {
     }
   });
 
-  it('Displays star rating correctly if rating is whole number', () => {
+  it("Displays star rating correctly if rating is whole number", () => {
     expect(wrapper.vm.starFileNames).toEqual([
       "star-full", "star-full", "star-full", "star-full", "star-empty"
     ]);
@@ -18,7 +18,7 @@ describe("Rating.vue", () => {
     expect(wrapper.findAll("img.star-empty").length).toBe(1);
   });
 
-  it('Displays star rating correctly if rating is a decimal (has a half star)', async () => {
+  it("Displays star rating correctly if rating is a decimal (has a half star)", async () => {
     wrapper.setProps({ rating: 2.5 });
     await vue.nextTick();
 
