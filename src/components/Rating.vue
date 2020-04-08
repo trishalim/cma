@@ -16,7 +16,11 @@ export default {
     // an array of star names based on rating
     starFileNames: function() {
       const stars = [
-        "star-empty", "star-empty", "star-empty", "star-empty", "star-empty"
+        "star-empty",
+        "star-empty",
+        "star-empty",
+        "star-empty",
+        "star-empty"
       ];
 
       // add a star for each full rating
@@ -38,5 +42,5 @@ export default {
       return require("../assets/" + imageFileName);
     }
   }
-}
+};
 </script>

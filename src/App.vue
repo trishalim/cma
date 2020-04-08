@@ -8,7 +8,9 @@
       <p>See the README file for assignment requirements.</p>
 
       <div class="premium-recipe-wrapper">
-        <PremiumRecipeCard class="recipe" v-for="(recipe, index) in recipes" :key="index"
+        <PremiumRecipeCard
+          class="recipe"
+          v-for="(recipe, index) in recipes" :key="index"
           v-bind:title="recipe.title"
           v-bind:rating="recipe.rating"
           v-bind:ratingCount="recipe.ratingCount"
@@ -38,34 +40,34 @@ export default {
     return {
       recipes: [
         {
-          title: 'Low Carb Thai Chicken Curry With Coconut Cauliflower Rice',
+          title: "Low Carb Thai Chicken Curry With Coconut Cauliflower Rice",
           rating: 3.5,
           ratingCount: 200,
           duration: 135,
           energy: 489,
-          energyUnit: 'Kilojoules',
+          energyUnit: "Kilojoules",
           carbs: 20,
           protein: 16,
           fats: 6,
           isLiked: true,
-          imageFileName: 'thai-curry.png'
+          imageFileName: "thai-curry.png"
         },
         {
-          title: 'Keto Bacon Wrapped Chicken Thighs With Cheddar Sauce and Chocolate Sprinkles and Ketchup and Mozzarella Cheese',
+          title: "Keto Bacon Wrapped Chicken Thighs With Cheddar Sauce and Chocolate Sprinkles and Ketchup and Mozzarella Cheese",
           rating: 3,
           ratingCount: 200,
           duration: 120,
           energy: 200,
-          energyUnit: 'Calories',
+          energyUnit: "Calories",
           carbs: 30,
           protein: 16,
           fats: 26,
           isLiked: false,
-          imageFileName: 'bacon-wrapped-chicken.jpeg'
+          imageFileName: "bacon-wrapped-chicken.jpeg"
         }
       ]
-    }
-  },
+    };
+  }
 };
 </script>
 
@@ -78,8 +80,13 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-h1, h2, h3, h4, h5, h6 {
-  color: #0C0C0A;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #0c0c0a;
 }
 </style>
 
