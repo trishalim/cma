@@ -25,11 +25,10 @@ export default {
       return require("../assets/" + imageFileName);
     }
   }
-}
+};
 </script>
 
 <style scoped>
-
 .macros {
   display: flex;
   align-items: center;
@@ -40,5 +39,4 @@ export default {
 .macro img {
   margin-right: 4px;
 }
-
 </style>

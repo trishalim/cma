@@ -23,7 +23,7 @@ export default {
     energyDisplay: function() {
       let energyValue = this.energy;
 
-      if (this.energyUnit.toLowerCase() === 'kilojoules') {
+      if (this.energyUnit.toLowerCase() === "kilojoules") {
         energyValue = Math.floor(energyValue * 4.184);
       }
 
@@ -31,9 +31,9 @@ export default {
     },
     durationDisplay: function() {
       const hours = Math.floor(this.duration / 60);
-      const minutes = this.duration - (hours * 60);
+      const minutes = this.duration - hours * 60;
 
-      let durationDisplay = '';
+      let durationDisplay = "";
       if (hours) durationDisplay += `${hours} hr `;
       if (minutes) durationDisplay += `${minutes} min `;
       return durationDisplay;
@@ -44,20 +44,21 @@ export default {
       return require("../assets/" + imageFileName);
     }
   }
-}
+};
 </script>
 
 <style scoped>
-
-.recipe-detail, .duration, .energy {
+.recipe-detail,
+.duration,
+.energy {
   display: flex;
   align-items: center;
 }
-.duration img, .energy img {
+.duration img,
+.energy img {
   margin-right: 8px;
 }
 .energy {
   margin-left: 16px;
 }
-
 </style>
