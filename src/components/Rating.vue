@@ -1,7 +1,7 @@
 <template>
   <div class="stars">
     <span v-for="(star, index) in starFileNames" :key="index">
-      <img :src="getImageUrl(`${star}.svg`)" />
+      <img :class="star" :src="getImageUrl(`${star}.svg`)" />
     </span>
   </div>
 </template>
@@ -29,7 +29,7 @@ export default {
       // add a star for each full rating
       const fullStarsCount = Math.floor(this.rating);
       for (let index = 0; index < fullStarsCount; index++) {
-        stars[index] = "star";
+        stars[index] = "star-full";
       }
 
       // if rating has a decimal point, add half a star
