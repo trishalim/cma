@@ -20,17 +20,11 @@
         <div class="rating-count">{{ ratingCount }} ratings</div>
       </div>
 
-      <div class="recipe-detail">
-        <div class="left">
-          <div class="duration">
-            <img v-bind:src="getImageUrl('clock.svg')" />
-            {{ durationDisplay }}
-          </div>
-          <div class="energy">
-            <img v-bind:src="getImageUrl('flame.svg')" />
-            {{ energyDisplay }}
-          </div>
-        </div>
+      <div class="recipe-info">
+        <RecipeDetail
+          :duration="duration"
+          :energy="energy"
+          :energyUnit="energyUnit" />
 
         <div class="right">
           <div class="macro">
@@ -53,10 +47,13 @@
 
 <script>
 import Rating from "./Rating.vue";
+import RecipeDetail from "./RecipeDetail.vue";
+
 export default {
   name: "PremiumRecipeCard",
   components: {
-    Rating
+    Rating,
+    RecipeDetail
   },
   props: {
     title: String,
@@ -70,26 +67,6 @@ export default {
     fats: Number,
     isLiked: Boolean,
     imageFileName: String
-  },
-  computed: {
-    energyDisplay: function() {
-      let energyValue = this.energy;
-
-      if (this.energyUnit.toLowerCase() === 'kilojoules') {
-        energyValue = Math.floor(energyValue * 4.184);
-      }
-
-      return `${energyValue} ${this.energyUnit}`;
-    },
-    durationDisplay: function() {
-      const hours = Math.floor(this.duration / 60);
-      const minutes = this.duration - (hours * 60);
-
-      let durationDisplay = '';
-      if (hours) durationDisplay += `${hours} hr `;
-      if (minutes) durationDisplay += `${minutes} min `;
-      return durationDisplay;
-    }
   },
   methods: {
     getImageUrl(imageFileName) {
@@ -179,21 +156,15 @@ export default {
     font-size: 14px;
   }
 
-  .recipe-detail {
+  .recipe-info {
     font-size: 12px;
     color: #393C40;
     margin-top: 4px;
     justify-content: space-between;
   }
-  .recipe-detail, .duration, .energy, .left, .right {
+  .recipe-info, .right {
     display: flex;
     align-items: center;
-  }
-  .duration img, .energy img {
-    margin-right: 8px;
-  }
-  .energy {
-    margin-left: 16px;
   }
   .macro {
     margin-left: 8px;
