@@ -1,12 +1,12 @@
 <template>
   <div class="macros">
-    <div class="macro">
+    <div class="macro" v-if="carbs >= 0">
       <img :src="getImageUrl('dot-red.svg')" />{{ carbs }}g
     </div>
-    <div class="macro">
+    <div class="macro" v-if="protein >= 0">
       <img :src="getImageUrl('dot-blue.svg')" />{{ protein }}g
     </div>
-    <div class="macro">
+    <div class="macro" v-if="fats >= 0">
       <img :src="getImageUrl('dot-yellow.svg')" />{{ fats }}g
     </div>
   </div>
