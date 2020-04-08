@@ -12,6 +12,11 @@
 </template>
 
 <script>
+import {
+  getEnergyDisplayInCalories,
+  getDurationDisplayInHrMin
+} from "@/utils/units.util";
+
 export default {
   name: "RecipeDetail",
   props: {
@@ -21,22 +26,10 @@ export default {
   },
   computed: {
     energyDisplay: function() {
-      let energyValue = this.energy;
-
-      if (this.energyUnit.toLowerCase() === "kilojoules") {
-        energyValue = Math.floor(energyValue * 4.184);
-      }
-
-      return `${energyValue} ${this.energyUnit}`;
+      return getEnergyDisplayInCalories(this.energy, this.energyUnit);
     },
     durationDisplay: function() {
-      const hours = Math.floor(this.duration / 60);
-      const minutes = this.duration - hours * 60;
-
-      let durationDisplay = "";
-      if (hours) durationDisplay += `${hours} hr `;
-      if (minutes) durationDisplay += `${minutes} min `;
-      return durationDisplay;
+      return getDurationDisplayInHrMin(this.duration);
     }
   }
 };
