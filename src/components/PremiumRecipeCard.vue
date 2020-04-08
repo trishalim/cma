@@ -12,7 +12,6 @@
     </div>
 
     <div class="recipe-desc">
-
       <h3 class="recipe-title"> {{ title }} </h3>
 
       <div class="recipe-rating">
@@ -25,20 +24,11 @@
           :duration="duration"
           :energy="energy"
           :energyUnit="energyUnit" />
-
-        <div class="right">
-          <div class="macro">
-            <img v-bind:src="getImageUrl('dot-red.svg')" />{{ carbs }}g
-          </div>
-          <div class="macro">
-            <img v-bind:src="getImageUrl('dot-blue.svg')" />{{ protein }}g
-          </div>
-          <div class="macro">
-            <img v-bind:src="getImageUrl('dot-yellow.svg')" />{{ fats }}g
-          </div>
-        </div>
+        <Macros
+          :carbs="carbs"
+          :protein="protein"
+          :fats="fats"/>
       </div>
-
     </div>
 
   </div>
@@ -48,12 +38,14 @@
 <script>
 import Rating from "./Rating.vue";
 import RecipeDetail from "./RecipeDetail.vue";
+import Macros from "./Macros.vue";
 
 export default {
   name: "PremiumRecipeCard",
   components: {
     Rating,
-    RecipeDetail
+    RecipeDetail,
+    Macros
   },
   props: {
     title: String,
@@ -160,17 +152,9 @@ export default {
     font-size: 12px;
     color: #393C40;
     margin-top: 4px;
-    justify-content: space-between;
-  }
-  .recipe-info, .right {
     display: flex;
     align-items: center;
-  }
-  .macro {
-    margin-left: 8px;
-  }
-  .macro img {
-    margin-right: 4px;
+    justify-content: space-between;
   }
 
 </style>
