@@ -12,26 +12,28 @@ describe("RecipeDetail.vue", () => {
   });
 
   it('Duration is displayed correctly in the format: x hr x min', () => {
-    expect(wrapper.vm.durationDisplay.trim()).toBe("3 hr 35 min");
+    expect(wrapper.find('.duration').text()).toContain("3 hr 35 min");
   });
 
-  it('Minutes are not displayed if 0', () => {
+  it('Minutes are not displayed if 0', async () => {
     wrapper.setProps({ duration: 60 });
-    expect(wrapper.vm.durationDisplay.trim()).toBe("1 hr");
+    await vue.nextTick();
+    expect(wrapper.find('.duration').text()).toContain("1 hr");
   });
 
-  it('Hours are not displayed if 0', () => {
+  it('Hours are not displayed if 0', async () => {
     wrapper.setProps({ duration: 15 });
-    expect(wrapper.vm.durationDisplay.trim()).toBe("15 min");
+    await vue.nextTick();
+    expect(wrapper.find('.duration').text()).toContain("15 min");
   });
 
   it('Kilojoules are converted to Calories', () => {
-    expect(wrapper.find('.energy').text()).toContain('836 Kilojoules');
+    expect(wrapper.find('.energy').text()).toContain("836 Kilojoules");
   });
 
   it('Calories are not converted', async () => {
     wrapper.setProps({ energyUnit: 'Calories' });
     await vue.nextTick();
-    expect(wrapper.find('.energy').text()).toContain('200 Calories');
+    expect(wrapper.find('.energy').text()).toContain("200 Calories");
   })
 })
