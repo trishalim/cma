@@ -1,12 +1,12 @@
 <template>
   <div class="macros">
-    <div class="macro" v-if="carbs >= 0">
+    <div class="macro" v-if="carbs !== null && carbs >= 0">
       <span class="dot dot-red"></span>{{ carbs }}g
     </div>
-    <div class="macro" v-if="protein >= 0">
+    <div class="macro" v-if="protein !== null && protein >= 0">
       <span class="dot dot-blue"></span>{{ protein }}g
     </div>
-    <div class="macro" v-if="fats >= 0">
+    <div class="macro" v-if="fats !== null && fats >= 0">
       <span class="dot dot-orange"></span>{{ fats }}g
     </div>
   </div>
