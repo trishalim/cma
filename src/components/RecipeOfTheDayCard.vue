@@ -1,5 +1,9 @@
 <template>
-  <div class="recipe">
+  <div
+    class="recipe"
+    :style="{ 'background-image': `url(${getImageUrl(imageFileName)})` }"
+  >
+    <div class="recipe-image-overlay"></div>
     <div class="top">
       <h4>Recipe of the Day</h4>
       <h3>{{ title }}</h3>
@@ -12,11 +16,7 @@
       />
     </div>
     <div class="bottom">
-      <Macros class="macros"
-        :carbs="carbs"
-        :protein="protein"
-        :fats="fats"
-      />
+      <Macros class="macros" :carbs="carbs" :protein="protein" :fats="fats" />
       <div class="learn-more">Learn More</div>
     </div>
   </div>
@@ -50,6 +50,25 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.recipe-image-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 12px;
+  background: black;
+  background-blend-mode: multiply;
+  mix-blend-mode: normal;
+  opacity: 0.45;
+}
+.top,
+.bottom {
+  z-index: 1;
 }
 .bottom {
   display: flex;

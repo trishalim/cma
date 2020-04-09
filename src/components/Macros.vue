@@ -33,7 +33,7 @@ export default {
   display: flex;
   align-items: center;
 }
-.macro {
+.macros .macro:not(:first-child) {
   margin-left: 8px;
 }
 .macro img {

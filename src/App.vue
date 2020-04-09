@@ -33,6 +33,7 @@
           :carbs="recipeOfTheDay.carbs"
           :protein="recipeOfTheDay.protein"
           :fats="recipeOfTheDay.fats"
+          :imageFileName="recipeOfTheDay.imageFileName"
         />
       </div>
     </div>
@@ -88,7 +89,8 @@ export default {
         energyUnit: "kcal",
         carbs: 2,
         protein: 26,
-        fats: 43
+        fats: 43,
+        imageFileName: "keto-italian-beef.png"
       }
     };
   }
