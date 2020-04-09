@@ -6,7 +6,7 @@
     <div class="recipe-image-overlay"></div>
     <div class="top">
       <h4>Recipe of the Day</h4>
-      <h3>{{ title }}</h3>
+      <h3 class="title">{{ title }}</h3>
       <Rating :rating="rating" />
       <RecipeDetail
         class="recipe-detail"
@@ -75,11 +75,17 @@ export default {
   justify-content: space-between;
   align-items: flex-end;
 }
-h3 {
+.title {
   font-size: 24px;
   color: white;
   margin: 0;
   font-weight: 600;
+
+  /* truncate to 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 h4 {
   font-weight: bold;
