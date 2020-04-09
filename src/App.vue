@@ -10,7 +10,7 @@
       <div class="premium-recipe-wrapper">
         <PremiumRecipeCard
           class="recipe"
-          v-for="(recipe, index) in recipes"
+          v-for="(recipe, index) in premiumRecipes"
           :key="index"
           :title="recipe.title"
           :rating="recipe.rating"
@@ -24,6 +24,16 @@
           :isLiked="recipe.isLiked"
           :imageFileName="recipe.imageFileName"
         />
+        <RecipeOfTheDayCard
+          :title="recipeOfTheDay.title"
+          :rating="recipeOfTheDay.rating"
+          :duration="recipeOfTheDay.duration"
+          :energy="recipeOfTheDay.energy"
+          :energyUnit="recipeOfTheDay.energyUnit"
+          :carbs="recipeOfTheDay.carbs"
+          :protein="recipeOfTheDay.protein"
+          :fats="recipeOfTheDay.fats"
+        />
       </div>
     </div>
   </div>
@@ -31,15 +41,17 @@
 
 <script>
 import PremiumRecipeCard from "./components/PremiumRecipeCard.vue";
+import RecipeOfTheDayCard from "./components/RecipeOfTheDayCard.vue";
 
 export default {
   name: "App",
   components: {
-    PremiumRecipeCard
+    PremiumRecipeCard,
+    RecipeOfTheDayCard
   },
   data() {
     return {
-      recipes: [
+      premiumRecipes: [
         {
           title: "Low Carb Thai Chicken Curry With Coconut Cauliflower Rice",
           rating: 3.5,
@@ -54,7 +66,8 @@ export default {
           imageFileName: "thai-curry.png"
         },
         {
-          title: "Keto Bacon Wrapped Chicken Thighs With Cheddar Sauce and Chocolate Sprinkles and Ketchup and Mozzarella Cheese",
+          title: `Keto Bacon Wrapped Chicken Thighs WithCheddar
+                  Sauce and Chocolate Sprinkles`,
           rating: 3,
           ratingCount: 200,
           duration: 120,
@@ -66,7 +79,17 @@ export default {
           isLiked: false,
           imageFileName: "bacon-wrapped-chicken.jpeg"
         }
-      ]
+      ],
+      recipeOfTheDay: {
+        title: "Keto Italian Beef With Cabbage Noodles",
+        rating: 5,
+        duration: 8,
+        energy: 269,
+        energyUnit: "kcal",
+        carbs: 2,
+        protein: 26,
+        fats: 43
+      }
     };
   }
 };
@@ -102,14 +125,13 @@ h6 {
 }
 
 .cm-container {
-  max-width: 960px;
+  max-width: 1200px;
   margin: auto;
 }
 
 /** Remove these styles when done */
 .premium-recipe-wrapper {
   margin-top: 100px;
-  border: 2px dashed red;
   padding: 16px;
   display: flex;
   justify-content: center;
