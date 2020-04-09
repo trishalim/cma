@@ -1,5 +1,37 @@
 # Carb Manager Dev Assignment
 
+## Dev Notes
+
+**My Process**
+1. Create a Trello board.
+2. Divide the assignment into subtasks.
+3. Added lists: Tuesday, Wednesday, Thursday, Optional.
+4. Create task items and distribute them throughout Tuesday, Wednesday, Thursday.
+5. Work through the tasks for each day.
+6. When I had something I wanted to improve, I assess the level of importance.
+7. If it's a must, I add an item to the current day, and work on it.
+8. If it's optional, I add an item to the Optional list.
+9. After all the requirements are implemented, I move on to the Optional list.
+
+**Challenges**
+1. I kept missing the prettier warnings. I think there should be some VS Code extension to have these warnings show up on the editor, but I didn't find that and I decided there were other more important things to work on.
+2. Figuring out how to reuse code when creating `RecipeOfTheDayCard`. There are so many options (slot, mixins, etc.) https://vuejsdevelopers.com/2017/06/11/vue-js-extending-components/ 
+In Angular, it's a simple `RecipeOfTheDayCard extends RecipeCard` so I wanted something as simple as that. I ended up using `extends` property.
+3. Using tech that's new to me (Vue, Storybook, writing tests). I like all of them, and happy to learn them! :)
+  
+**Things to Improve**
+1. Use `scss` or `less`.
+2. The font family in Storybook is not working, so it's currently an ugly Times New Roman...
+3. The unit tests for `Rating.vue` but I'm out of ideas.
+4. Naming of `RecipeDetail` and the utils.
+5. The UI for the cards when viewport width < 400px
+6. UI breaks when text is too long on macros, energy, duration.
+7. I'm sure there is a ton more, so I'd love to hear your thoughts!
+
+**Other Notes**
+1. I created subcomponents based on what is common between `PremiumRecipeCard` and `RecipeOfTheDayCard`.
+2. I don't personally use Carb Manager because I don't track my diet, but I do see myself using it in the future when I am more conscious about my diet. I already track other areas in my life such as expenses, my period and habits.
+
 ## Design
 
 **Card:**
