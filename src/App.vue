@@ -134,9 +134,9 @@ h6 {
 /** Remove these styles when done */
 .premium-recipe-wrapper {
   margin-top: 100px;
-  padding: 16px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .recipe {
   margin: 10px;
