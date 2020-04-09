@@ -45,7 +45,7 @@ export default {
   height: 10px;
 }
 .dot::after {
-  content: '•';
+  content: "•";
   position: absolute;
   font-size: 24px;
   line-height: 10px;
@@ -54,7 +54,7 @@ export default {
   color: #f94642;
 }
 .dot-blue {
-  color: #3177bb; 
+  color: #3177bb;
 }
 .dot-orange {
   color: #fda120;
