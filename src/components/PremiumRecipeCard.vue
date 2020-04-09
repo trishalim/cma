@@ -33,6 +33,7 @@
 
       <div class="recipe-info">
         <RecipeDetail
+          :showIcon="true"
           :duration="duration"
           :energy="energy"
           :energyUnit="energyUnit"

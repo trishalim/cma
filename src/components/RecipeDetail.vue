@@ -1,11 +1,12 @@
 <template>
   <div class="recipe-detail">
     <div class="duration">
-      <img src="../assets/clock.svg" />
+      <img src="../assets/clock.svg" v-if="showIcon" />
       {{ durationDisplay }}
     </div>
+    <div v-if="!showIcon" class="dot">•</div>
     <div class="energy">
-      <img src="../assets/flame.svg" />
+      <img src="../assets/flame.svg" v-if="showIcon" />
       {{ energyDisplay }}
     </div>
   </div>
@@ -22,7 +23,8 @@ export default {
   props: {
     duration: Number,
     energy: Number,
-    energyUnit: String
+    energyUnit: String,
+    showIcon: Boolean
   },
   computed: {
     energyDisplay: function() {
@@ -46,7 +48,10 @@ export default {
 .energy img {
   margin-right: 8px;
 }
-.energy {
+.energy img {
   margin-left: 16px;
+}
+.dot {
+  margin: 0 5px;
 }
 </style>
